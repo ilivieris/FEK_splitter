@@ -12,4 +12,4 @@ class Dataset(torch.utils.data.Dataset):
 
     def __getitem__(self, i):
         # return dictionary of input_ids, attention_mask, and labels for index i
-        return self.df['text'].iloc[i], self.df['label'].iloc[i]
+        return {'text': self.df['text'].iloc[i], 'labels': self.df['label'].iloc[i]}
