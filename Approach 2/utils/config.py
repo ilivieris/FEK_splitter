@@ -4,8 +4,9 @@ class Parameters():
     def __init__(self) -> None:
         # Data & tokenizer parameters
         self.dataset_path = '../Data/Dataset.csv'
-
-        # # Model parameters
+        self.model_name = 'lighteternal/stsb-xlm-r-greek-transfer'
+        
+        # Model parameters
         self.output_dir = 'model' 
         self.device = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')
         self.dropout_rate = 0.5

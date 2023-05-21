@@ -6,9 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
-# model
+# models
 model/
 model/*
+sentence_transformer/
+sentence_transformer/*
 
 # Log
 logs.log
