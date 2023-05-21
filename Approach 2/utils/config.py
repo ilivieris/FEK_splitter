@@ -4,7 +4,7 @@ class Parameters():
     def __init__(self) -> None:
         # Data & tokenizer parameters
         self.dataset_path = '../Data/Dataset.csv'
-        self.model_name = 'lighteternal/stsb-xlm-r-greek-transfer'
+        self.model_name = 'paraphrase-multilingual-MiniLM-L12-v2' # ['lighteternal/stsb-xlm-r-greek-transfer', 'paraphrase-multilingual-MiniLM-L12-v2']
         
         # Model parameters
         self.output_dir = 'model' 

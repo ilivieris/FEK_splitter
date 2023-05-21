@@ -25,7 +25,7 @@ def sentence_pairs_generation(sentences, labels, pairs):
   numClassesList = np.unique(labels)
   idx = [np.where(labels == i)[0] for i in numClassesList]
 
-  for idxA in range(len(sentences)):      
+  for idxA in range(len(sentences)):
     currentSentence = sentences[idxA]
     label = labels[idxA]
     idxB = np.random.choice(idx[np.where(numClassesList==label)[0][0]])

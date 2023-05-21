@@ -7,18 +7,19 @@ from utils.loss_function import *
         
         
 class Classifier(nn.Module):
-    def __init__(self, config=None, pretrained_model='lighteternal/stsb-xlm-r-greek-transfer', args=None):
+    def __init__(self, args=None):
         super(Classifier, self).__init__()
         self.args = args
-        self.pretrained_model = pretrained_model
 
         # Backbone sentence-transformer for creating the embeddings
-        self.backbone = SentenceTransformer(model_name_or_path=pretrained_model, device=args.device)
+        self.backbone = SentenceTransformer(model_name_or_path=args.model_name, device=args.device)
+        # Embeddings dimension
+        embedding_dimension = self.backbone.get_sentence_embedding_dimension()
 
         if len(self.args.hidden_size) == 1:
-            self.lin_layer1 = nn.Linear(768, self.args.hidden_size[0])
+            self.lin_layer1 = nn.Linear(embedding_dimension, self.args.hidden_size[0])
         else:
-            self.lin_layer1 = nn.Linear(768, self.args.hidden_size[0])
+            self.lin_layer1 = nn.Linear(embedding_dimension, self.args.hidden_size[0])
             self.lin_layer2 = nn.Linear(self.args.hidden_size[0], self.args.hidden_size[1])
 
             
