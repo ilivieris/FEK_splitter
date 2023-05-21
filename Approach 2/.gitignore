@@ -10,6 +10,9 @@ __pycache__/
 model/
 model/*
 
+# Log
+logs.log
+
 # Distribution / packaging
 .Python
 build/
